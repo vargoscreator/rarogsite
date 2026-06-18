@@ -1070,6 +1070,10 @@ main.main{
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition: all .3s ease;
+}
+.categories__item:hover .categories__item-image img{
+    transform: scale(1.1);
 }
 .categories__item-title{
     color: #151515;
