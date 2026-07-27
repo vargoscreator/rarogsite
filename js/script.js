@@ -1,3 +1,18 @@
+setMainPadding()
+let resizeTimeout;
+function setMainPadding() {
+  const header = document.querySelector('header');
+  const main = document.querySelector('main.main');
+
+  if (!header || !main) return;
+
+  main.style.paddingTop = header.offsetHeight + 'px';
+}
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(setMainPadding, 100);
+});
+
 let swiper = new Swiper(".hero__slider", {
     loop: true,
     spaceBetween: 0,
@@ -57,20 +72,6 @@ let joinusSlider = new Swiper(".joinus__slider", {
     },
 });
 
-let resizeTimeout;
-function setMainPadding() {
-  const header = document.querySelector('header');
-  const main = document.querySelector('main.main');
-
-  if (!header || !main) return;
-
-  main.style.paddingTop = header.offsetHeight + 'px';
-}
-window.addEventListener('load', setMainPadding);
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(setMainPadding, 100);
-});
 
 // Поиск в шапке — открытие/закрытие
 const searchOpen = document.querySelector('.header__search-open');
@@ -168,6 +169,43 @@ if (menuOpen && header) {
     if (menuOpen.contains(e.target)) return;
     header.classList.remove('catalog-open');
   });
+}
+
+// Страница входа: показать/скрыть пароль
+// перечёркнутый глаз — пока пароль заполнен и скрыт, обычный — когда пуст или открыт
+document.querySelectorAll('.login__eye').forEach((btn) => {
+  const input = btn.closest('.login__field').querySelector('.login__input');
+  if (!input) return;
+
+  function updateEye() {
+    const hidden = input.type === 'password';
+    btn.classList.toggle('is-active', hidden && input.value !== '');
+    btn.setAttribute('aria-label', hidden ? 'Показати пароль' : 'Сховати пароль');
+  }
+
+  btn.addEventListener('click', () => {
+    input.type = input.type === 'password' ? 'text' : 'password';
+    updateEye();
+  });
+
+  input.addEventListener('input', updateEye);
+  updateEye();
+});
+
+// Страница входа: кнопка «Увійти» активна только с заполненными полями
+const loginForm = document.querySelector('.login__form');
+
+if (loginForm) {
+  const loginSubmit = loginForm.querySelector('.login__submit');
+  const loginFields = loginForm.querySelectorAll('.login__input');
+
+  function toggleLoginSubmit() {
+    const filled = [...loginFields].every((field) => field.value.trim() !== '');
+    loginSubmit.disabled = !filled;
+  }
+
+  loginFields.forEach((field) => field.addEventListener('input', toggleLoginSubmit));
+  toggleLoginSubmit();
 }
 
 // FAQ accordion (jQuery — для плавного раскрытия)
