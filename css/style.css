@@ -2660,3 +2660,602 @@ main.main{
         transform-origin: center top;
     }
 }
+/* ==========================================================================
+   Бонусна програма
+   ========================================================================== */
+.bonus{
+    padding: 24px 0 120px;
+}
+.bonus__inner{
+    max-width: 970px;
+    margin: 24px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+.bonus__title{
+    width: 100%;
+    color: #151515;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 140%; /* 56px */
+    text-align: center;
+}
+.bonus__hero{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-radius: 4px;
+    background: #151515;
+    overflow: hidden;
+}
+.bonus__hero-content{
+    flex: 0 0 auto;
+    width: 570px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 0 24px 24px;
+}
+.bonus__hero-title{
+    color: #FFF;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 120%; /* 33.6px */
+    letter-spacing: -0.84px;
+}
+.bonus__hero-descr{
+    color: #E1E6EB;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+}
+.bonus__hero-badge{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: #EE7700;
+    color: #FFF;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: -0.42px;
+    white-space: nowrap;
+}
+.bonus__hero-media{
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    align-self: stretch;
+    overflow: hidden;
+}
+/* 493 / 370 wide, offset -62 / -22 — as in the Figma frame */
+.bonus__hero-img{
+    position: absolute;
+    display: block;
+    width: 133.24%;
+    height: auto;
+    max-width: none;
+    left: -16.76%;
+    top: -9.91%;
+    pointer-events: none;
+}
+.bonus__how{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.bonus__how-title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.54px;
+    text-align: center;
+}
+.bonus__list{
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+}
+.bonus__item{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 4px;
+    background: #F5F7FA;
+}
+.bonus__item-num{
+    color: #ACB3BB;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: -0.8px;
+}
+.bonus__item-title{
+    width: 100%;
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 130%; /* 28.6px */
+    letter-spacing: -0.66px;
+}
+.bonus__item-descr{
+    width: 100%;
+    color: #61656B;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+}
+.bonus__note{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.bonus__note-icon{
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+.bonus__note-text{
+    color: #151515;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    text-align: center;
+}
+
+/* ==========================================================================
+   Умови доставки та оплати
+   ========================================================================== */
+.delivery{
+    padding: 24px 0 120px;
+}
+.delivery__inner{
+    margin-top: 24px;
+}
+.delivery__title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 120%; /* 33.6px */
+    letter-spacing: -0.84px;
+    margin-bottom: 24px;
+}
+.delivery__group-title{
+    display: none; /* заголовок секції тільки в мобільному макеті */
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 120%; /* 24px */
+    letter-spacing: -0.6px;
+}
+.delivery__group + .delivery__group{
+    margin-top: 32px;
+}
+.delivery__row{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+.delivery__card{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    border-radius: 4px;
+    background: #F5F7FA;
+    overflow: hidden;
+}
+.delivery__card-head{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+.delivery__card--loose .delivery__card-head{
+    margin-bottom: 16px;
+}
+.delivery__card-icon{
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+.delivery__card-title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%; /* 33px */
+    letter-spacing: -0.66px;
+}
+.delivery__card-body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+.delivery__card-body--shipping{
+    gap: 32px;
+}
+.delivery__card-body--payment{
+    gap: 16px;
+}
+.delivery__block{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.delivery__block--logo{
+    gap: 12px;
+}
+.delivery__label{
+    width: 100%;
+    color: #151515;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%; /* 21px */
+}
+.delivery__text{
+    width: 100%;
+    color: #151515;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+}
+.delivery__price{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+.delivery__accent{
+    color: #EE7700;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%; /* 21px */
+    letter-spacing: 0.28px;
+    text-transform: uppercase;
+}
+.delivery__np-logo{
+    display: block;
+    width: 132px;
+    height: 47px;
+}
+.delivery__pickup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+.delivery__specs{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+.delivery__spec{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.delivery__spec-key{
+    color: #61656B;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+}
+.delivery__spec-val{
+    color: #151515;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+}
+.delivery__spec-link:hover{
+    text-decoration: underline;
+}
+.delivery__map{
+    position: relative;
+    width: 100%;
+    /* у макеті 186px, але нижче ~205px Google віддає статичний прев'ю-режим
+       (кліком відкриває maps.google.com). 220px — мінімум для інтерактивної карти */
+    height: 220px;
+    border: 1px solid #E1E6EB;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.delivery__map-frame{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.delivery__link{
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #151515;
+    color: #151515;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    transition: all .2s ease;
+}
+.delivery__link:hover{
+    color: #EE7700;
+    border-bottom-color: #EE7700;
+}
+.delivery__methods{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+.delivery__method{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+.delivery__text--bullet{
+    position: relative;
+    padding-left: 21px;
+}
+.delivery__text--bullet::before{
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8.5px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+}
+.delivery__pays{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding-left: 22px;
+}
+.delivery__pay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 35px;
+    border: 0.5px solid #E1E6EB;
+    border-radius: 4px;
+    background: #FFF;
+}
+.delivery__pay-img{
+    display: block;
+}
+.delivery__pay-img--liqpay{
+    width: 17.2032px;
+    height: 17.5003px;
+}
+.delivery__pay-img--visa{
+    width: 40.2097px;
+    height: 12.7678px;
+}
+.delivery__pay-img--mastercard{
+    width: 31.4999px;
+    height: 19.4217px;
+}
+.delivery__pay-img--np{
+    width: 24.9126px;
+    height: 24.5px;
+}
+
+/* ---------- Адаптив: Бонусна програма + Доставка ---------- */
+@media (max-width: 1280px) {
+    .bonus__hero-content{
+        width: 52%;
+    }
+}
+@media (max-width: 1024px) {
+    .bonus,
+    .delivery{
+        padding: 20px 0 100px;
+    }
+    .bonus__title{
+        font-size: 34px;
+    }
+    .bonus__hero-title{
+        font-size: 24px;
+        letter-spacing: -0.72px;
+    }
+    .bonus__item-title{
+        font-size: 20px;
+        letter-spacing: -0.6px;
+    }
+    .delivery__title{
+        font-size: 24px;
+        letter-spacing: -0.72px;
+    }
+    .delivery__card{
+        padding: 20px;
+    }
+    .delivery__card-title{
+        font-size: 20px;
+        letter-spacing: -0.6px;
+    }
+    .delivery__specs{
+        flex-wrap: wrap;
+        gap: 16px 8px;
+    }
+    .delivery__spec{
+        flex: 1 1 45%;
+    }
+}
+@media (max-width: 768px) {
+    .bonus,
+    .delivery{
+        padding: 16px 0 80px;
+    }
+    .bonus__inner{
+        max-width: none;
+        margin-top: 16px;
+        gap: 24px;
+    }
+    .bonus__title{
+        font-size: 26px;
+        letter-spacing: -0.78px;
+    }
+    .bonus__hero{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+    }
+    .bonus__hero-content{
+        width: 100%;
+        gap: 8px;
+        padding: 16px 16px 0;
+    }
+    .bonus__hero-title{
+        font-size: 20px;
+        letter-spacing: -0.6px;
+    }
+    .bonus__hero-badge{
+        margin-top: 8px;
+    }
+    .bonus__hero-media{
+        flex: 0 0 auto;
+        width: 100%;
+        height: 222px;
+    }
+    /* 443 / 343 wide, offset -42 / -17 */
+    .bonus__hero-img{
+        width: 129.15%;
+        left: -12.24%;
+        top: -7.66%;
+    }
+    .bonus__how-title{
+        font-size: 16px;
+        letter-spacing: -0.48px;
+    }
+    .bonus__list{
+        flex-direction: column;
+        gap: 8px;
+    }
+    .bonus__item{
+        gap: 12px;
+    }
+    .bonus__item-title{
+        font-size: 18px;
+        letter-spacing: -0.54px;
+    }
+    .bonus__note{
+        width: 100%;
+    }
+
+    .delivery__inner{
+        margin-top: 16px;
+    }
+    .delivery__title{
+        display: none;
+    }
+    .delivery__group-title{
+        display: block;
+        margin-bottom: 16px;
+    }
+    .delivery__group + .delivery__group{
+        margin-top: 40px;
+    }
+    .delivery__row{
+        flex-direction: column;
+        gap: 16px;
+    }
+    .delivery__card{
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 16px;
+    }
+    .delivery__card-head,
+    .delivery__card--loose .delivery__card-head{
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+    .delivery__card-head--tight{
+        gap: 8px;
+    }
+    .delivery__card-icon{
+        flex: 0 0 auto;
+    }
+    .delivery__card-title{
+        font-size: 18px;
+        letter-spacing: -0.54px;
+    }
+    .delivery__card-body--shipping{
+        gap: 24px;
+    }
+    .delivery__card-body--guarantee{
+        gap: 16px;
+    }
+    .delivery__pickup{
+        gap: 8px;
+    }
+    .delivery__specs{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+    .delivery__spec{
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 4px;
+        width: 100%;
+    }
+    .delivery__spec-key{
+        flex: 0 0 120px;
+        width: 120px;
+    }
+    .delivery__spec-val{
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}
+@media (max-width: 480px) {
+    .delivery__spec-key{
+        flex-basis: 108px;
+        width: 108px;
+    }
+}
