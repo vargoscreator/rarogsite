@@ -3259,3 +3259,1346 @@ main.main{
         width: 108px;
     }
 }
+
+/* ==========================================================================
+   Landing / Camouflage — Маскування транспорту, техніки, споруд та обладнання
+   ========================================================================== */
+
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---------- Загальні елементи лендінгу ---------- */
+.camo__section + .camo__section{
+    margin-top: 120px;
+}
+.camo-title{
+    margin: 0 auto;
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: center;
+}
+.camo-btn{
+    display: inline-flex;
+    max-width: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 56px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #F7891B;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    transition: background .2s ease;
+}
+.camo-btn:hover{
+    background: #EE7700;
+}
+.camo-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.camo-tags--column{
+    flex-direction: column;
+    align-items: flex-start;
+}
+.camo-tag{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    background: #F5F7FA;
+    color: #474B52;
+    font-size: 16px;
+    line-height: 150%;
+}
+.camo-badge{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    height: 24px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: #F7891B;
+    color: #FFF;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: -0.48px;
+}
+.camo-badge--soft{
+    color: #FFEFDB;
+}
+
+/* ---------- Слайдери ---------- */
+.camo-slider{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+/* слайдер живе в межах контейнера — краї не обрізаються */
+.camo-slider__viewport{
+    width: 100%;
+    overflow: visible;
+}
+.camo-slider__track{
+    display: flex;
+    align-items: stretch;
+}
+.camo-dots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.camo-dots__item{
+    flex: 0 0 auto;
+    max-width: none;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #E1E6EB;
+    transition: width .2s ease, height .2s ease, background .2s ease;
+}
+.camo-dots__item.is-active{
+    width: 10px;
+    height: 10px;
+    background: #474B52;
+}
+
+/* ---------- Хедер ---------- */
+.camo-header{
+    border-bottom: 1px solid #EEF2F6;
+}
+.camo-header__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: 80px;
+}
+.camo-header__brand{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.camo-header__logo{
+    display: block;
+    flex: 0 0 auto;
+}
+.camo-header__logo img{
+    display: block;
+    width: 107px;
+    height: 30.94px;
+}
+.camo-header__divider{
+    flex: 0 0 1px;
+    width: 1px;
+    height: 24px;
+    background: #C7CCD1;
+}
+.camo-header__tagline{
+    color: #151515;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+}
+.camo-header__phone{
+    flex: 0 0 auto;
+    color: #151515;
+    font-size: 15px;
+    line-height: normal;
+    transition: color .2s ease;
+}
+.camo-header__phone:hover{
+    color: #F7891B;
+}
+
+/* ---------- Hero ---------- */
+.camo-hero{
+    display: flex;
+    align-items: stretch;
+    background: #151515;
+    overflow: hidden;
+}
+.camo-hero__content{
+    position: relative;
+    flex: 0 0 57.143%;
+    max-width: 57.143%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 475px;
+    padding: 24px 120px 24px max(16px, calc((100% - 1170px) / 2));
+    overflow: hidden;
+}
+/* декоративна сітка променів: inset -267.79% / -154.57% / -167.73% / -54.57% */
+.camo-hero__pattern{
+    position: absolute;
+    left: -54.57%;
+    top: -267.79%;
+    width: 309.14%;
+    height: 535.52%;
+    max-width: none;
+    pointer-events: none;
+}
+.camo-hero__back{
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 4px;
+    color: #FFF;
+    font-size: 14px;
+    line-height: 150%;
+    transition: color .2s ease;
+}
+.camo-hero__back img{
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+.camo-hero__back:hover{
+    color: #F7891B;
+}
+.camo-hero__body{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
+.camo-hero__text{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.camo-hero__title{
+    color: #FFF;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 130%;
+}
+.camo-hero__descr{
+    color: #ACB3BB;
+    font-size: 16px;
+    line-height: 150%;
+}
+.camo-hero__btn{
+    width: 260px;
+}
+.camo-hero__media{
+    flex: 0 0 42.857%;
+    max-width: 42.857%;
+    background: #F5F7FA;
+    overflow: hidden;
+}
+.camo-hero__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+}
+
+/* ---------- Вступний блок ---------- */
+.camo-intro__inner{
+    position: relative;
+    max-width: 970px;
+    height: 349px;
+    margin: 0 auto;
+}
+.camo-intro__media{
+    position: absolute;
+    left: 100px;
+    top: 37px;
+    width: 470px;
+    height: 312px;
+    border-radius: 8px;
+    background: #F5F7FA;
+    overflow: hidden;
+}
+.camo-intro__img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.camo-intro__fade{
+    position: absolute;
+    left: 273px;
+    top: 0;
+    width: 197px;
+    height: 100%;
+    background: linear-gradient(to left, #EDEDED 0%, rgba(237, 237, 237, 0) 100%);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000 60%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000 60%);
+}
+.camo-intro__text{
+    position: absolute;
+    left: 500px;
+    top: 0;
+    width: 470px;
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 24px;
+    line-height: 140%;
+}
+
+/* ---------- Основні завдання ---------- */
+.camo-tasks__title{
+    max-width: 570px;
+}
+.camo-tasks__list{
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 48px;
+}
+.camo-tasks__item{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 160px;
+    padding: 16px;
+    border-radius: 8px;
+    background: #F7F9FB;
+}
+.camo-tasks__num{
+    color: #ACB3BB;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 120%;
+    letter-spacing: -0.8px;
+}
+.camo-tasks__text{
+    color: #151515;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+/* ---------- Кожне рішення проєктується під ---------- */
+.camo-design__inner{
+    max-width: 970px;
+    margin: 0 auto;
+}
+.camo-design__title{
+    max-width: 770px;
+}
+.camo-design__list{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 48px;
+}
+.camo-design__card{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid #E1E6EB;
+    border-radius: 16px;
+    background: #FFF;
+}
+.camo-design__body{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.camo-design__name{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 140%;
+}
+.camo-design__icon{
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background: #FFEFDB;
+}
+.camo-design__icon img{
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+/* ---------- Типи об'єктів ---------- */
+.camo-types{
+    overflow: hidden;
+}
+.camo-types__title{
+    max-width: 570px;
+}
+.camo-types__body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    user-select: none;
+    margin-top: 48px;
+}
+.camo-type{
+    flex-shrink: 0;
+    width: 370px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px;
+    border: 1px solid #EEF2F6;
+    border-radius: 24px;
+}
+.camo-type__media{
+    position: relative;
+    pointer-events: none;
+    height: 220px;
+    border-radius: 12px;
+    background: #F5F7FA;
+    overflow: hidden;
+    user-select: none;
+}
+/* кадрування відтворює видиму область із макета */
+.camo-type__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.camo-type__img--1{
+    object-position: center bottom;
+}
+.camo-type__body{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.camo-type__name{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 140%;
+}
+.camo-types__dots{
+    display: none; /* у десктопному макеті пагінації немає */
+}
+.camo-types__btn{
+    width: 370px;
+}
+
+/* ---------- Що отримує клієнт / об'єкт ---------- */
+.camo-benefits{
+    position: relative;
+    padding: 80px 0;
+    background: #151515;
+    overflow: hidden;
+}
+.camo-benefits__pattern{
+    position: absolute;
+    left: 50%;
+    top: -1287px;
+    width: 2543.73px;
+    height: 2543.73px;
+    max-width: none;
+    transform: translateX(-50%) translateX(299.86px);
+    pointer-events: none;
+}
+.camo-benefits__inner{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+.camo-benefits__col{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.camo-benefits__title{
+    color: #FFF;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 130%;
+}
+.camo-benefits__list{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.camo-benefits__item{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #E1E6EB;
+    font-size: 16px;
+    line-height: 150%;
+}
+.camo-benefits__marker{
+    flex: 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+.camo-benefits__marker img{
+    display: block;
+    width: 9px;
+    height: 9px;
+}
+
+/* ---------- Формати співпраці ---------- */
+.camo-formats__panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 64px 48px;
+    border-radius: 8px;
+    background: #F5F7FA;
+}
+.camo-formats__head{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+}
+.camo-formats__title,
+.camo-formats__subtitle{
+    max-width: 770px;
+}
+.camo-formats__subtitle{
+    color: #1C1E21;
+    font-size: 16px;
+    line-height: 150%;
+}
+.camo-formats__body{
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+}
+.camo-formats__option{
+    flex: 0 0 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+.camo-formats__sep{
+    flex: 0 0 1px;
+    width: 1px;
+    align-self: stretch;
+    background: #E1E6EB;
+}
+.camo-formats__option--complex{
+    flex: 1 1 0;
+    min-width: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+}
+.camo-formats__main{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+.camo-formats__heading{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.camo-formats__name{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 140%;
+}
+.camo-formats__descr{
+    color: #474B52;
+    font-size: 16px;
+    line-height: 150%;
+}
+.camo-formats__link{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #474B52;
+    font-size: 16px;
+    line-height: 150%;
+    transition: color .2s ease;
+}
+.camo-formats__link img{
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+.camo-formats__link:hover{
+    color: #151515;
+}
+.camo-steps{
+    flex: 0 0 245px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 19px;
+    border-left: 1px solid #E1E6EB;
+}
+.camo-steps__item{
+    position: relative;
+    color: #151515;
+    font-size: 18px;
+    line-height: 150%;
+}
+.camo-steps__item::before{
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 10.5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 100px;
+    background: #151515;
+    box-shadow: 0 0 0 3px rgba(225, 230, 235, 0.4);
+}
+.camo-steps__item--last::before{
+    left: -24px;
+    top: 9px;
+    width: 10px;
+    height: 10px;
+}
+
+/* ---------- Реалізовані проєкти ---------- */
+.camo-cases{
+    overflow: hidden;
+}
+.camo-cases__slider{
+    margin-top: 48px;
+}
+.camo-cases__track{
+    align-items: center;
+}
+.camo-dots__item{
+    cursor: pointer;
+}
+.camo-case{
+    position: relative;
+    flex-shrink: 0;
+    height: 384px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.camo-case--wide{
+    width: 570px;
+}
+.camo-case--narrow{
+    width: 260px;
+}
+/* кадрування відтворює видиму область із макета */
+.camo-case__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.camo-case__img--2{
+    object-position: center 77%;
+}
+.camo-case__img--3{
+    object-position: 64.6% center;
+}
+.camo-case__label{
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: #F5F7FA;
+    color: #151515;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+/* ---------- Відео ---------- */
+.camo-video__frame{
+    position: relative;
+    max-width: 770px;
+    margin: 0 auto;
+    aspect-ratio: 770 / 430;
+    border-radius: 11.55px;
+    background: #151515;
+    overflow: hidden;
+}
+.camo-video__player{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.camo-video__play{
+    position: absolute;
+    display: block;
+    max-width: none;
+    left: 50.498%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 13.209%;
+    padding: 0;
+    border: 0;
+    line-height: 0;
+    transition: transform .2s ease;
+}
+.camo-video__play img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.camo-video__play:hover{
+    transform: translate(-50%, -50%) scale(1.06);
+}
+.camo-video__frame.is-playing .camo-video__play{
+    display: none;
+}
+
+/* ---------- Контакти ---------- */
+.camo-contacts{
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 686px;
+}
+.camo-contacts__bg{
+    width: 100%;
+    padding: 80px 0;
+    background: #F5F7FA;
+}
+.camo-contacts__info{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 470px;
+}
+.camo-contacts__head{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.camo-contacts__title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.84px;
+}
+.camo-contacts__descr{
+    color: #474B52;
+    font-size: 16px;
+    line-height: 150%;
+}
+.camo-contacts__list{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.camo-contacts__row{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.camo-contacts__row img{
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+.camo-contacts__link{
+    color: #1C1E21;
+    font-size: 18px;
+    line-height: 150%;
+    transition: color .2s ease;
+}
+.camo-contacts__link:hover{
+    color: #F7891B;
+}
+.camo-socials{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.camo-socials__link{
+    display: block;
+    width: 40px;
+    height: 40px;
+    transition: opacity .2s ease;
+}
+.camo-socials__link img{
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.camo-socials__link:hover{
+    opacity: .75;
+}
+.camo-contacts__layer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.camo-contacts__layer .container{
+    display: flex;
+    justify-content: flex-end;
+}
+.camo-form{
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 571px;
+    padding: 64px;
+    border: 1px solid #EEF2F6;
+    border-radius: 16px;
+    background: #FFF;
+}
+.camo-form__head{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 426px;
+    text-align: center;
+}
+.camo-form__title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.84px;
+}
+.camo-form__descr{
+    color: #474B52;
+    font-size: 16px;
+    line-height: 150%;
+}
+.camo-form__fields{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.camo-form__field{
+    display: block;
+    width: 100%;
+}
+.camo-form__input,
+.camo-form__textarea{
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: #F5F7FA;
+    color: #1C1E21;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    transition: border-color .2s ease;
+}
+.camo-form__input{
+    height: 56px;
+}
+.camo-form__textarea{
+    height: 112px;
+    resize: none;
+}
+.camo-form__input::placeholder,
+.camo-form__textarea::placeholder{
+    color: #9BA4B1;
+}
+.camo-form__input:focus,
+.camo-form__textarea:focus{
+    outline: none;
+    border-color: #F7891B;
+}
+.camo-form__input.is-invalid,
+.camo-form__textarea.is-invalid{
+    border-color: #E5484D;
+}
+.camo-form__btn{
+    width: 256px;
+}
+.camo-form__status{
+    display: none;
+    margin-top: -24px;
+    color: #2F9457;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+}
+.camo-form__status.is-visible{
+    display: block;
+}
+
+/* ---------- Футер ---------- */
+.camo-footer{
+    margin-top: 120px;
+    border-top: 1px solid #EEF2F6;
+}
+.camo-footer__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: 80px;
+}
+.camo-footer__brand{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.camo-footer__logo{
+    display: block;
+    flex: 0 0 auto;
+}
+.camo-footer__logo img{
+    display: block;
+    width: 107px;
+    height: 30.94px;
+}
+.camo-footer__divider{
+    flex: 0 0 1px;
+    width: 1px;
+    height: 24px;
+    background: #C7CCD1;
+}
+.camo-footer__tagline{
+    color: #151515;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+}
+.camo-footer__copy{
+    color: #ACB3BB;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: center;
+}
+.camo-footer__phone{
+    color: #151515;
+    font-size: 15px;
+    line-height: normal;
+    transition: color .2s ease;
+}
+.camo-footer__phone:hover{
+    color: #F7891B;
+}
+
+/* ==========================================================================
+   Landing / Camouflage — адаптив
+   ========================================================================== */
+@media (max-width: 1280px) {
+    .camo-hero__content{
+        padding-right: 80px;
+        padding-left: max(16px, calc((100% - 1024px) / 2 + 16px));
+    }
+    .camo-hero__title{
+        font-size: 34px;
+    }
+    .camo-formats__panel{
+        padding: 48px 32px;
+    }
+    .camo-formats__option--complex{
+        gap: 32px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .camo__section + .camo__section{
+        margin-top: 80px;
+    }
+    .camo-title{
+        font-size: 26px;
+    }
+
+    /* Хедер */
+    .camo-header__inner{
+        flex-direction: column;
+        gap: 12px;
+        height: auto;
+        padding: 16px 0;
+    }
+    .camo-header__brand{
+        flex-direction: column;
+        gap: 12px;
+    }
+    .camo-header__divider{
+        display: none;
+    }
+    .camo-header__tagline{
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+    }
+    .camo-header__phone{
+        font-size: 16px;
+    }
+
+    /* Hero */
+    .camo-hero{
+        flex-direction: column;
+    }
+    .camo-hero__content{
+        flex: 0 0 auto;
+        max-width: none;
+        gap: 16px;
+        height: auto;
+        padding: 24px;
+    }
+    .camo-hero__pattern{
+        left: -304.99%;
+        top: -318.39%;
+        width: 809.79%;
+        height: 636.63%;
+    }
+    .camo-hero__body{
+        gap: 32px;
+    }
+    .camo-hero__title{
+        font-size: 32px;
+    }
+    .camo-hero__btn{
+        width: 100%;
+    }
+    .camo-hero__media{
+        flex: 0 0 auto;
+        max-width: none;
+        width: 100%;
+        height: 336px;
+    }
+
+    /* Вступний блок */
+    .camo-intro__inner{
+        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        max-width: none;
+        height: auto;
+    }
+    .camo-intro__text{
+        position: static;
+        order: -1;
+        width: auto;
+        font-size: 22px;
+    }
+    .camo-intro__media{
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: 228px;
+    }
+    .camo-intro__img{
+        object-position: left center;
+    }
+    .camo-intro__fade{
+        left: 72.6%;
+        right: 0;
+        width: auto;
+    }
+
+    /* Основні завдання */
+    .camo-tasks__title,
+    .camo-design__title,
+    .camo-types__title,
+    .camo-cases__title,
+    .camo-formats__title{
+        max-width: none;
+    }
+    .camo-tasks__list{
+        flex-direction: column;
+        margin-top: 32px;
+    }
+    .camo-tasks__item{
+        flex: 0 0 auto;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: space-between;
+        min-height: 0;
+    }
+    .camo-tasks__text{
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    /* Кожне рішення */
+    .camo-design__inner{
+        max-width: none;
+    }
+    .camo-design__list{
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 32px;
+    }
+    .camo-design__card{
+        flex: 0 0 auto;
+        gap: 24px;
+    }
+    .camo-design__body{
+        gap: 12px;
+    }
+    .camo-design__name{
+        font-size: 20px;
+        line-height: 130%;
+    }
+
+    /* Типи об'єктів */
+    .camo-types__body{
+        gap: 32px;
+        margin-top: 32px;
+    }
+    .camo-type{
+        width: 100%;
+    }
+    .camo-types__dots{
+        display: flex;
+    }
+    .camo-types__btn{
+        width: 100%;
+    }
+
+    /* Що отримує клієнт / об'єкт */
+    .camo-benefits{
+        padding: 64px 0;
+    }
+    .camo-benefits__inner{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 48px;
+        padding: 0 8px;
+    }
+    .camo-benefits__col{
+        gap: 24px;
+    }
+    .camo-benefits__title{
+        font-size: 26px;
+    }
+
+    /* Формати співпраці */
+    .camo-formats__panel{
+        gap: 32px;
+        padding: 24px;
+    }
+    .camo-formats__head{
+        gap: 8px;
+    }
+    .camo-formats__body{
+        flex-direction: column;
+        gap: 32px;
+    }
+    .camo-formats__option{
+        gap: 12px;
+    }
+    .camo-formats__main{
+        gap: 12px;
+    }
+    .camo-formats__name{
+        font-size: 22px;
+    }
+    .camo-badge{
+        font-size: 14px;
+        letter-spacing: -0.42px;
+        color: #FFEFDB;
+    }
+    .camo-formats__option{
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .camo-formats__sep{
+        flex: 0 0 1px;
+        width: 100%;
+        height: 1px;
+        align-self: auto;
+    }
+    .camo-formats__option--complex{
+        flex-direction: column;
+        gap: 24px;
+    }
+    .camo-formats__main{
+        width: 100%;
+    }
+    .camo-steps{
+        flex: 0 0 auto;
+        align-self: stretch;
+        width: 100%;
+    }
+
+    /* Реалізовані проєкти */
+    .camo-cases__slider{
+        gap: 32px;
+        margin-top: 32px;
+    }
+    .camo-cases__track{
+        gap: 30px;
+    }
+    .camo-case{
+        height: 205px;
+    }
+    .camo-case--wide,
+    .camo-case--narrow{
+        width: 305px;
+    }
+    .camo-cases__track{
+        align-items: stretch;
+    }
+
+    /* Контакти */
+    .camo-contacts{
+        display: block;
+        min-height: 0;
+    }
+    .camo-contacts__bg{
+        padding: 40px 0 240px;
+    }
+    .camo-contacts__info{
+        gap: 32px;
+        max-width: none;
+        padding: 0 8px;
+    }
+    .camo-contacts__head{
+        gap: 16px;
+    }
+    .camo-contacts__title,
+    .camo-form__title{
+        font-size: 22px;
+        line-height: 140%;
+        letter-spacing: 0;
+    }
+    .camo-contacts__layer{
+        position: static;
+        display: block;
+        width: auto;
+        height: auto;
+        margin-top: -200px;
+        pointer-events: auto;
+    }
+    .camo-contacts__layer .container{
+        display: block;
+    }
+    .camo-form{
+        gap: 32px;
+        width: 100%;
+        padding: 40px 16px;
+    }
+    .camo-form__head{
+        max-width: none;
+    }
+    .camo-form__btn{
+        width: 100%;
+    }
+    .camo-form__status{
+        margin-top: -16px;
+    }
+
+    /* Футер */
+    .camo-footer{
+        margin-top: 80px;
+    }
+    .camo-footer__inner{
+        flex-direction: column;
+        gap: 24px;
+        height: auto;
+        padding: 32px 0 40px;
+    }
+    .camo-footer__brand{
+        flex-direction: column;
+        gap: 12px;
+    }
+    .camo-footer__divider{
+        display: none;
+    }
+    .camo-footer__tagline{
+        font-size: 18px;
+        text-align: center;
+    }
+    .camo-footer__phone{
+        order: 2;
+        font-size: 15px;
+    }
+    .camo-footer__copy{
+        order: 3;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 374px) {
+    /* дуже вузькі екрани: лише те, що інакше не вміщається */
+    .camo-case--wide,
+    .camo-case--narrow{
+        width: 88%;
+    }
+}
