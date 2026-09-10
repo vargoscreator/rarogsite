@@ -3289,7 +3289,7 @@ main.main{
     line-height: 130%;
     text-align: center;
 }
-.camo-btn{
+.btn-lg{
     display: inline-flex;
     max-width: none;
     align-items: center;
@@ -3306,7 +3306,7 @@ main.main{
     text-align: center;
     transition: background .2s ease;
 }
-.camo-btn:hover{
+.btn-lg:hover{
     background: #EE7700;
 }
 .camo-tags{
@@ -4021,29 +4021,29 @@ main.main{
 }
 
 /* ---------- Контакти ---------- */
-.camo-contacts{
+.contact-cta{
     position: relative;
     display: flex;
     align-items: center;
     min-height: 686px;
 }
-.camo-contacts__bg{
+.contact-cta__bg{
     width: 100%;
     padding: 80px 0;
     background: #F5F7FA;
 }
-.camo-contacts__info{
+.contact-cta__info{
     display: flex;
     flex-direction: column;
     gap: 40px;
     max-width: 470px;
 }
-.camo-contacts__head{
+.contact-cta__head{
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
-.camo-contacts__title{
+.contact-cta__title{
     color: #151515;
     font-family: "IBM Plex Mono", monospace;
     font-size: 28px;
@@ -4051,55 +4051,55 @@ main.main{
     line-height: 120%;
     letter-spacing: -0.84px;
 }
-.camo-contacts__descr{
+.contact-cta__descr{
     color: #474B52;
     font-size: 16px;
     line-height: 150%;
 }
-.camo-contacts__list{
+.contact-cta__list{
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-.camo-contacts__row{
+.contact-cta__row{
     display: flex;
     align-items: center;
     gap: 8px;
 }
-.camo-contacts__row img{
+.contact-cta__row img{
     display: block;
     width: 24px;
     height: 24px;
 }
-.camo-contacts__link{
+.contact-cta__link{
     color: #1C1E21;
     font-size: 18px;
     line-height: 150%;
     transition: color .2s ease;
 }
-.camo-contacts__link:hover{
+.contact-cta__link:hover{
     color: #F7891B;
 }
-.camo-socials{
+.contact-socials{
     display: flex;
     align-items: center;
     gap: 16px;
 }
-.camo-socials__link{
+.contact-socials__link{
     display: block;
     width: 40px;
     height: 40px;
     transition: opacity .2s ease;
 }
-.camo-socials__link img{
+.contact-socials__link img{
     display: block;
     width: 40px;
     height: 40px;
 }
-.camo-socials__link:hover{
+.contact-socials__link:hover{
     opacity: .75;
 }
-.camo-contacts__layer{
+.contact-cta__layer{
     position: absolute;
     left: 0;
     top: 0;
@@ -4109,11 +4109,11 @@ main.main{
     height: 100%;
     pointer-events: none;
 }
-.camo-contacts__layer .container{
+.contact-cta__layer .container{
     display: flex;
     justify-content: flex-end;
 }
-.camo-form{
+.contact-form{
     pointer-events: auto;
     display: flex;
     flex-direction: column;
@@ -4125,14 +4125,14 @@ main.main{
     border-radius: 16px;
     background: #FFF;
 }
-.camo-form__head{
+.contact-form__head{
     display: flex;
     flex-direction: column;
     gap: 16px;
     max-width: 426px;
     text-align: center;
 }
-.camo-form__title{
+.contact-form__title{
     color: #151515;
     font-family: "IBM Plex Mono", monospace;
     font-size: 28px;
@@ -4140,23 +4140,23 @@ main.main{
     line-height: 120%;
     letter-spacing: -0.84px;
 }
-.camo-form__descr{
+.contact-form__descr{
     color: #474B52;
     font-size: 16px;
     line-height: 150%;
 }
-.camo-form__fields{
+.contact-form__fields{
     display: flex;
     flex-direction: column;
     gap: 16px;
     width: 100%;
 }
-.camo-form__field{
+.contact-form__field{
     display: block;
     width: 100%;
 }
-.camo-form__input,
-.camo-form__textarea{
+.contact-form__input,
+.contact-form__textarea{
     width: 100%;
     padding: 8px 16px;
     border: 1px solid transparent;
@@ -4168,30 +4168,34 @@ main.main{
     line-height: 150%;
     transition: border-color .2s ease;
 }
-.camo-form__input{
+.contact-form__input{
     height: 56px;
 }
-.camo-form__textarea{
+.contact-form__textarea{
     height: 112px;
     resize: none;
 }
-.camo-form__input::placeholder,
-.camo-form__textarea::placeholder{
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder{
     color: #9BA4B1;
 }
-.camo-form__input:focus,
-.camo-form__textarea:focus{
+/* довгі плейсхолдери (нативний input їх не переносить) обрізаємо коректно */
+.contact-form__input::placeholder{
+    text-overflow: ellipsis;
+}
+.contact-form__input:focus,
+.contact-form__textarea:focus{
     outline: none;
     border-color: #F7891B;
 }
-.camo-form__input.is-invalid,
-.camo-form__textarea.is-invalid{
+.contact-form__input.is-invalid,
+.contact-form__textarea.is-invalid{
     border-color: #E5484D;
 }
-.camo-form__btn{
+.contact-form__btn{
     width: 256px;
 }
-.camo-form__status{
+.contact-form__status{
     display: none;
     margin-top: -24px;
     color: #2F9457;
@@ -4199,7 +4203,7 @@ main.main{
     line-height: 150%;
     text-align: center;
 }
-.camo-form__status.is-visible{
+.contact-form__status.is-visible{
     display: block;
 }
 
@@ -4517,28 +4521,28 @@ main.main{
     }
 
     /* Контакти */
-    .camo-contacts{
+    .contact-cta{
         display: block;
         min-height: 0;
     }
-    .camo-contacts__bg{
+    .contact-cta__bg{
         padding: 40px 0 240px;
     }
-    .camo-contacts__info{
+    .contact-cta__info{
         gap: 32px;
         max-width: none;
         padding: 0 8px;
     }
-    .camo-contacts__head{
+    .contact-cta__head{
         gap: 16px;
     }
-    .camo-contacts__title,
-    .camo-form__title{
+    .contact-cta__title,
+    .contact-form__title{
         font-size: 22px;
         line-height: 140%;
         letter-spacing: 0;
     }
-    .camo-contacts__layer{
+    .contact-cta__layer{
         position: static;
         display: block;
         width: auto;
@@ -4546,21 +4550,21 @@ main.main{
         margin-top: -200px;
         pointer-events: auto;
     }
-    .camo-contacts__layer .container{
+    .contact-cta__layer .container{
         display: block;
     }
-    .camo-form{
+    .contact-form{
         gap: 32px;
         width: 100%;
         padding: 40px 16px;
     }
-    .camo-form__head{
+    .contact-form__head{
         max-width: none;
     }
-    .camo-form__btn{
+    .contact-form__btn{
         width: 100%;
     }
-    .camo-form__status{
+    .contact-form__status{
         margin-top: -16px;
     }
 
@@ -4600,5 +4604,466 @@ main.main{
     .camo-case--wide,
     .camo-case--narrow{
         width: 88%;
+    }
+}
+
+/* ==========================================================================
+   Співпраця
+   ========================================================================== */
+.coop{
+    padding: 24px 0 120px;
+}
+.coop__title{
+    margin-top: 24px;
+    color: #151515;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 140%; /* 56px */
+    text-align: center;
+}
+.coop__body{
+    margin-top: 32px;
+}
+.coop__body--second{
+    margin-top: 80px;
+}
+
+/* ---------- Вступний блок ---------- */
+.coop-intro{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 352px;
+    border-radius: 4px;
+    background: #F5F7FA;
+    overflow: hidden;
+}
+.coop-intro__content{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0 24px 24px;
+}
+.coop-intro__title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.84px;
+}
+.coop-intro__text{
+    color: #2D3239;
+    font-size: 16px;
+    line-height: 150%;
+}
+.coop-intro__media{
+    flex: 1 1 0;
+    min-width: 0;
+    align-self: stretch;
+    overflow: hidden;
+}
+/* кадрування відтворює видиму область із макета */
+.coop-intro__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 39%;
+}
+
+/* ---------- Секція з картками ---------- */
+.coop-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+.coop-section--dist{
+    margin-top: 80px;
+}
+.coop-section--b2b + .coop-faq{
+    margin-top: 80px;
+}
+.coop-section__title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.84px;
+    text-align: center;
+}
+.coop-cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+.coop-card{
+    flex: 0 0 calc((100% - 16px) / 3);
+    max-width: calc((100% - 16px) / 3);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 4px;
+    background: #F5F7FA;
+}
+.coop-card__num{
+    color: #ACB3BB;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 120%;
+    letter-spacing: -0.8px;
+}
+.coop-card__name{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.66px;
+}
+.coop-card__text{
+    color: #61656B;
+    font-size: 14px;
+    line-height: 150%;
+}
+.coop-card--lg .coop-card__text{
+    font-size: 16px;
+}
+.coop-cards--b2b{
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+.coop-cards__media{
+    flex: 1 1 0;
+    min-width: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+/* кадрування відтворює видиму область із макета */
+.coop-cards__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 19% center;
+}
+
+/* ---------- Карта присутності ---------- */
+.coop-map{
+    position: relative;
+    width: 100%;
+    height: 514px;
+    margin-top: 48px;
+    overflow: hidden;
+}
+.coop-map__frame,
+.coop-map__canvas{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.coop-map__canvas[hidden],
+.coop-map__frame[hidden]{
+    display: none;
+}
+/* картка точки у вспливаючому вікні Google Maps */
+.coop-map__popup{
+    padding: 2px 4px 4px;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+.coop-map__popup-title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -0.48px;
+}
+.coop-map__popup-text{
+    margin-top: 4px;
+    color: #61656B;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+/* ---------- FAQ ---------- */
+.coop-faq{
+    display: flex;
+    align-items: flex-start;
+    gap: 106px;
+    padding: 104px 0;
+}
+.coop-faq__aside{
+    flex: 0 0 385px;
+    max-width: 385px;
+    position: sticky;
+    top: 24px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.coop-faq__label{
+    color: #61656B;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.8px;
+}
+.coop-faq__title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -2.4px;
+}
+.accordion{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.accordion__item{
+    border-radius: 8px;
+    transition: background .2s ease;
+}
+.accordion__heading{
+    font-weight: inherit;
+}
+.accordion__trigger{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+    width: 100%;
+    max-width: none;
+    padding: 16px 8px 16px 24px;
+    border-bottom: 1px solid #C7CCD1;
+    color: inherit;
+    text-align: left;
+}
+.accordion__num{
+    flex: 0 0 24px;
+    width: 24px;
+    color: #ACB3BB;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 120%;
+    transition: color .2s ease;
+}
+.accordion__question{
+    flex: 1 1 0;
+    min-width: 0;
+    padding-top: 4px;
+    color: #151515;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: left;
+}
+.accordion__icon{
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    background: url("../img/cooperation/faq-closed.svg") center / contain no-repeat;
+}
+.accordion__panel{
+    padding: 12px 8px 16px 88px;
+}
+.accordion__answer{
+    color: #474B52;
+    font-size: 14px;
+    line-height: 150%;
+}
+.accordion__item.is-open{
+    background: #F5F7FA;
+}
+.accordion__item.is-open .accordion__trigger{
+    padding-bottom: 0;
+    border-bottom-color: transparent;
+}
+.accordion__item.is-open .accordion__num{
+    color: #878B91;
+}
+.accordion__item.is-open .accordion__icon{
+    background-image: url("../img/cooperation/faq-open.svg");
+}
+.accordion__trigger:hover .accordion__question{
+    color: #F7891B;
+}
+
+/* контактний блок цієї сторінки вищий — у формі чотири поля */
+.contact-cta--lg{
+    min-height: 732px;
+    margin-top: 32px;
+}
+.contact-cta__bullets{
+    padding-left: 24px;
+    list-style: disc;
+    color: #474B52;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+/* ==========================================================================
+   Співпраця — адаптив
+   ========================================================================== */
+@media (max-width: 1280px) {
+    .coop-faq{
+        gap: 60px;
+        padding: 80px 0;
+    }
+    .coop-faq__aside{
+        flex-basis: 320px;
+        max-width: 320px;
+    }
+    .coop-faq__title{
+        font-size: 40px;
+        letter-spacing: -2px;
+    }
+    .coop-intro{
+        height: auto;
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .coop{
+        padding: 16px 0 80px;
+    }
+    .coop__title{
+        margin-top: 16px;
+        font-size: 26px;
+        letter-spacing: -0.78px;
+    }
+    .coop__body{
+        margin-top: 24px;
+    }
+    .coop__body--second,
+    .coop-section--dist{
+        margin-top: 64px;
+    }
+
+    /* Вступний блок */
+    .coop-intro{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+        height: auto;
+        min-height: 0;
+    }
+    .coop-intro__content{
+        flex: 0 0 auto;
+        gap: 8px;
+        padding: 16px 16px 0;
+    }
+    .coop-intro__title{
+        font-size: 20px;
+        letter-spacing: -0.6px;
+    }
+    .coop-intro__media{
+        flex: 0 0 auto;
+        align-self: auto;
+        height: 222px;
+    }
+    .coop-intro__img{
+        object-position: center 44%;
+    }
+
+    /* Секції з картками */
+    .coop-section{
+        gap: 24px;
+    }
+    .coop-section__title--sm{
+        font-size: 20px;
+        letter-spacing: -0.6px;
+    }
+    .coop-cards,
+    .coop-cards--b2b{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+    .coop-card{
+        flex: 0 0 auto;
+        max-width: none;
+        gap: 12px;
+    }
+    .coop-card__name{
+        font-size: 18px;
+        letter-spacing: -0.54px;
+    }
+    .coop-cards__media{
+        flex: 0 0 auto;
+        height: 218px;
+    }
+    .coop-cards__img{
+        object-position: 22% center;
+    }
+
+    /* Карта */
+    .coop-map{
+        height: 504px;
+        margin-top: 64px;
+    }
+
+    /* FAQ */
+    .coop-section--b2b + .coop-faq{
+        margin-top: 64px;
+    }
+    .coop-faq{
+        flex-direction: column;
+        gap: 24px;
+        padding: 64px 0;
+    }
+    .coop-faq__aside{
+        flex: 0 0 auto;
+        max-width: none;
+        width: 100%;
+        position: static;
+    }
+    .coop-faq__title{
+        font-size: 32px;
+        letter-spacing: -1.6px;
+    }
+    .accordion{
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .accordion__trigger{
+        gap: 16px;
+        padding: 8px 8px 8px 16px;
+    }
+    .accordion__question{
+        font-size: 16px;
+        line-height: 150%;
+    }
+    .accordion__icon{
+        flex-basis: 24px;
+        width: 24px;
+        height: 24px;
+    }
+    .accordion__panel{
+        padding: 8px 8px 12px 56px;
+    }
+
+    /* Контакти */
+    .contact-cta--lg{
+        min-height: 0;
+        margin-top: 64px;
     }
 }
