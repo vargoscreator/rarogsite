@@ -5067,3 +5067,542 @@ main.main{
         margin-top: 64px;
     }
 }
+
+/* ==========================================================================
+   RAROG 427 — сторінка партнерства з 427-ю бригадою
+   ========================================================================== */
+
+/* темна тема сторінки: хедер із макета інвертований,
+   решта хедера/футера — стандартні, взяті з інших сторінок */
+.body--r427{
+    background: #000;
+}
+.body--r427 .header__free{
+    background: #000;
+}
+.body--r427 .header__free-title{
+    color: #FFF;
+}
+.body--r427 .header__end{
+    border-top-color: rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.95);
+}
+.body--r427 .header__top-menu a,
+.body--r427 .header__top-tel,
+.body--r427 .header__lang-selected,
+.body--r427 .header__lang-item,
+.body--r427 .header__menu a,
+.body--r427 .header__menu-open{
+    color: #FFF;
+}
+.body--r427 .header__logo img{
+    filter: brightness(0) invert(1);
+}
+.body--r427 .header__end svg path{
+    stroke: #FFF;
+}
+.body--r427 .header__search-input{
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFF;
+}
+.body--r427 .header__search-input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- Hero ---------- */
+.r427-hero{
+    position: relative;
+    height: 604px;
+    overflow: hidden;
+}
+/* кадрування відтворює видиму область із макета і не залежить від ширини екрана */
+.r427-hero__bg{
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 35%;
+}
+.r427-hero__fade{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 137px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
+}
+.r427-hero__side{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.r427-hero__side--left{
+    left: 0;
+    width: 504px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+.r427-hero__side--right{
+    right: 0;
+    width: 501px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+.r427-hero__content{
+    position: absolute;
+    left: 136px;
+    top: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+.r427-hero__tagline{
+    color: #FFF;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.r427-hero__brands{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.r427-hero__brand{
+    display: flex;
+    align-items: flex-end;
+    height: 94.882px;
+}
+.r427-hero__brand img{
+    display: block;
+    width: 241px;
+    height: auto;
+}
+.r427-hero__plus{
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+.r427-hero__partner{
+    display: block;
+    width: 310px;
+    height: 42.508px;
+}
+
+/* ---------- Контент ---------- */
+.r427-body{
+    padding-bottom: 120px;
+}
+.r427-body .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 120px;
+}
+
+/* Про партнерство */
+.r427-about{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 2px;
+}
+.r427-about__pic{
+    position: relative;
+    height: 374px;
+    overflow: hidden;
+}
+.r427-about__pic--drone{
+    flex: 0 0 33.675%;   /* 394 / 1170 */
+    margin-right: 8px;
+}
+.r427-about__pic--operator{
+    flex: 1 1 0;
+    min-width: 0;
+}
+/* кадрування відтворює видиму область із макета */
+.r427-about__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.r427-about__pic--drone .r427-about__img{
+    object-position: 28.7% center;
+}
+.r427-about__pic--operator .r427-about__img{
+    object-position: 27.9% center;
+}
+.r427-about__text{
+    flex: 0 0 48.718%;   /* 570 / 1170 */
+    margin-left: -5.47%; /* -64 / 1170 — текст заходить на фото */
+    position: relative;
+    color: #FFF;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.4px;
+}
+.r427-about__text-muted{
+    color: #878B91;
+}
+
+/* Заклик */
+.r427-cta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 572px;
+    max-width: 100%;
+}
+.r427-cta__note{
+    max-width: 370px;
+    color: #878B91;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.28px;
+    text-align: center;
+}
+.r427-cta__card{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 178px;
+    overflow: hidden;
+}
+.r427-cta__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 28.1%;
+    transition: transform .4s ease;
+}
+.r427-cta__shade{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 122px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.r427-cta__title{
+    position: absolute;
+    left: 8px;
+    top: 149.5px;
+    transform: translateY(-50%);
+    color: #FFF;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.r427-cta__arrow{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    transition: background .2s ease;
+}
+.r427-cta__arrow img{
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+.r427-cta__card:hover .r427-cta__img{
+    transform: scale(1.03);
+}
+.r427-cta__card:hover .r427-cta__arrow{
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.r427__mark{
+    display: block;
+    width: 28px;
+    height: 30.667px;
+}
+
+/* ==========================================================================
+   RAROG 427 — адаптив
+   ========================================================================== */
+@media (max-width: 1280px) {
+    .r427-hero__content{
+        left: max(16px, calc((100% - 1170px) / 2));
+    }
+    .r427-hero__tagline{
+        font-size: 18px;
+        white-space: normal;
+    }
+    .r427-about__text{
+        font-size: 18px;
+    }
+    .r427-cta__title{
+        font-size: 20px;
+        letter-spacing: 0.4px;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Контент */
+    .r427-body{
+        padding-bottom: 80px;
+    }
+    .r427-body .container{
+        gap: 80px;
+    }
+
+    .r427-about{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .r427-about__pic{
+        flex: 0 0 auto;
+        height: 200px;
+        margin-right: 0;
+    }
+    .r427-about__pic--operator{
+        order: 1;
+    }
+    .r427-about__text{
+        order: 2;
+        flex: 0 0 auto;
+        margin-left: 0;
+        margin-top: -32px;
+        padding: 0 24px;
+        font-size: 14px;
+        letter-spacing: 0.28px;
+    }
+    .r427-about__pic--drone{
+        order: 3;
+        margin-top: 32px;
+    }
+    .r427-about__pic--operator .r427-about__img{
+        object-position: center 51.2%;
+    }
+    .r427-about__pic--drone .r427-about__img{
+        object-position: center bottom;
+    }
+
+    .r427-cta{
+        width: 288px;
+    }
+    .r427-cta__note{
+        max-width: none;
+    }
+    .r427-cta__card{
+        height: 145px;
+    }
+    .r427-cta__img{
+        object-position: center 27.2%;
+    }
+    .r427-cta__shade{
+        height: 86px;
+    }
+    .r427-cta__title{
+        left: 8.5px;
+        top: auto;
+        bottom: 30px;
+        transform: translateY(50%);
+        font-size: 22px;
+        letter-spacing: 0.44px;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 768px) {
+    .r427-hero{
+        height: 516px;
+    }
+    .r427-hero__bg{
+        object-position: 50% 30%;
+    }
+    /* на мобільному фото переходить у чорне ще до низу героя */
+    .r427-hero__fade{
+        bottom: 0;
+        height: 360px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 47%);
+    }
+    .r427-hero__side--left,
+    .r427-hero__side--right{
+        width: 100px;
+    }
+    .r427-hero__content{
+        left: 16px;
+        right: 16px;
+        top: auto;
+        bottom: 113px;
+        align-items: center;
+    }
+    .r427-hero__tagline{
+        max-width: 303px;
+        font-size: 16px;
+        letter-spacing: 0.32px;
+        text-align: center;
+    }
+    .r427-hero__brands{
+        gap: 12px;
+    }
+    .r427-hero__brand{
+        height: 49px;
+    }
+    .r427-hero__brand img{
+        width: 125px;
+    }
+    .r427-hero__plus{
+        width: 14px;
+        height: 14px;
+    }
+    .r427-hero__partner{
+        width: 154px;
+        height: 21px;
+    }
+}
+
+/* телефон: точна геометрія фону з мобільного макета —
+   бокс 830 x 478 зі зсувом -233 / -99 у фреймі 375 x 516 */
+@media (max-width: 480px) {
+    .r427-hero__bg{
+        inset: auto;
+        left: -62.13%;
+        top: -19.19%;
+        width: 221.33%;
+        height: auto;
+        max-width: none;
+        object-fit: fill;
+    }
+}
+
+@media (max-width: 374px) {
+    /* вузькі телефони: зменшуємо пару логотипів, щоб вона не виходила за екран */
+    .r427-hero__tagline{
+        max-width: 100%;
+    }
+    .r427-hero__brands{
+        gap: 8px;
+    }
+    .r427-hero__brand{
+        height: 44px;
+    }
+    .r427-hero__brand img{
+        width: 112px;
+    }
+    .r427-hero__plus{
+        width: 12px;
+        height: 12px;
+    }
+    .r427-hero__partner{
+        width: 138px;
+        height: 19px;
+    }
+    .r427-cta{
+        width: 100%;
+    }
+}
+
+/* ---------- Темні випадні меню на цій сторінці ---------- */
+.body--r427 .mega-menu{
+    border-top-color: rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.95);
+}
+.body--r427 .mega-menu__menu > li a{
+    color: #EEF2F6;
+}
+.body--r427 .mega-menu__menu > li a:hover{
+    background: rgba(255, 255, 255, 0.08);
+}
+.body--r427 .mobile-menu{
+    background: rgba(0, 0, 0, 0.98);
+}
+.body--r427 .mobile-menu__nav > li a,
+.body--r427 .mobile-menu__catalog > li > a,
+.body--r427 .mobile-menu__acc,
+.body--r427 .mobile-menu__tels a{
+    color: #EEF2F6;
+}
+.body--r427 .mobile-menu__sub > li > a{
+    color: #ACB3BB;
+}
+.body--r427 .mobile-menu__sub{
+    border-left-color: rgba(255, 255, 255, 0.2);
+}
+.body--r427 .mobile-menu__contacts::before{
+    background-color: rgba(255, 255, 255, 0.12);
+}
+.body--r427 .mobile-menu__mess-link{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Футер: блок «Конфігуратор» + прямі посилання ----------
+   Самостійний блок із власними класами. Сторінки без цієї розмітки
+   не змінюються — щоб додати його ще десь, достатньо скопіювати markup. */
+.footer__promo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+.footer__promo-row{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 24px;
+}
+.footer__promo-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 24px;
+}
+.footer__promo-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #EEF2F6;
+    font-size: 16px;
+    line-height: 150%;
+    transition: color .2s ease;
+}
+.footer__promo-link img{
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.footer__promo-link:hover{
+    color: #F7891B;
+}
+.footer__badge{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 4px 4px;
+    border-radius: 4px;
+    background: #2F9457;
+    color: #FFF;
+    font-size: 10px;
+    line-height: 1;
+}
+
+@media (max-width: 1024px) {
+    .footer__promo{
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+    .footer__promo-list{
+        gap: 16px 24px;
+    }
+}
