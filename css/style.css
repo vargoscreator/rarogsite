@@ -5606,3 +5606,1454 @@ main.main{
         gap: 16px 24px;
     }
 }
+
+/* ==========================================================================
+   Кар'єра — список вакансій та сторінка вакансії
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.career-hero{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 516px;
+    padding: 0 16px 32px;
+    background: #151515;
+    overflow: hidden;
+}
+.career-hero__picture,
+.career-hero__img{
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.career-hero__img{
+    object-fit: cover;
+    object-position: center;
+}
+/* затемнення знизу під заголовком */
+.career-hero__fade{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 271px;
+    background: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, 0));
+    pointer-events: none;
+}
+.career-hero__title{
+    position: relative;
+    color: #F5F7FA;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -4px;
+    text-align: center;
+}
+
+/* ---------- Про компанію ---------- */
+.career-about{
+    padding: 104px 0;
+    background: #F7F9FB;
+}
+.career-about__inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    max-width: 976px;
+    margin: 0 auto;
+}
+.career-about__text{
+    color: #61656B;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -2px;
+    text-align: center;
+}
+.career-about__accent{
+    color: #151515;
+}
+
+/* ---------- Місія ---------- */
+.career-mission{
+    padding: 104px 0;
+    background: #FFF;
+}
+.career-mission__grid{
+    display: flex;
+    gap: 9px;
+}
+.career-mission__card{
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 346px;
+    border-radius: 4px;
+    overflow: hidden;
+    color: #FFF;
+}
+.career-mission__card--dark{
+    padding: 40px 48px;
+    background: #151515;
+}
+.career-mission__card--photo{
+    justify-content: flex-end;
+    padding: 0 48px 40px;
+    background: #151515;
+}
+.career-mission__img{
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 26%;
+}
+/* розмите затемнення під текстом */
+.career-mission__fade{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 229px;
+    background: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    -webkit-mask-image: linear-gradient(to top, #000 40%, transparent);
+    mask-image: linear-gradient(to top, #000 40%, transparent);
+    pointer-events: none;
+}
+.career-mission__text{
+    font-size: 16px;
+    line-height: 150%;
+}
+.career-mission__accent{
+    position: relative;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -1.2px;
+}
+
+/* ---------- Вакансії ---------- */
+.career-jobs{
+    padding: 0 0 104px;
+    background: #FFF;
+}
+.career-jobs--page{
+    padding-top: 40px;
+}
+.career-jobs__head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    max-width: 582px;
+    margin: 0 auto;
+}
+.career-jobs__title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -1.2px;
+    text-align: center;
+}
+.career-jobs__list{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 778px;
+    margin: 40px auto 0;
+}
+.career-jobs__empty{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 382px;
+    margin: 0 auto;
+    padding-top: 104px;
+    text-align: center;
+}
+.career-jobs__empty[hidden]{
+    display: none;
+}
+.career-jobs__empty-title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.84px;
+}
+.career-jobs__empty-text{
+    color: #474B52;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+/* панель пошуку та фільтрів */
+.career-toolbar{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+.career-toolbar__filters-btn{
+    display: none;
+    gap: 8px;
+    flex: 0 0 auto;
+    height: 32px;
+    color: #151515;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+}
+.career-toolbar__filters-btn img{
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+/* поле пошуку */
+.career-search{
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 48px;
+    padding: 4px 16px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: #F5F7FA;
+    cursor: text;
+    transition: border-color .2s ease;
+}
+.career-search:focus-within{
+    border-color: #E1E6EB;
+}
+.career-search__icon{
+    display: block;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+}
+.career-search__input{
+    flex: 1 1 auto;
+    min-width: 0;
+    color: #151515;
+    font-size: 16px;
+    line-height: 150%;
+}
+.career-search__input::placeholder{
+    color: #878B91;
+    font-size: 16px;
+}
+.career-search__input::-webkit-search-cancel-button{
+    cursor: pointer;
+}
+
+/* фільтри */
+.career-filters{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+}
+.career-filters__close,
+.career-filters__actions{
+    display: none;
+}
+.career-filter{
+    position: relative;
+}
+.career-filter__toggle{
+    gap: 8px;
+    max-width: none;
+    width: auto;
+    height: 48px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: #EEF2F6;
+    color: #151515;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    white-space: nowrap;
+}
+.career-filter__toggle:hover{
+    background: #E1E6EB;
+}
+.career-filter__arrow{
+    display: block;
+    width: 16px;
+    height: 16px;
+    transition: transform .2s ease;
+}
+.career-filter.is-open .career-filter__arrow{
+    transform: rotate(180deg);
+}
+.career-filter__panel{
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 20;
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    width: 300px;
+    padding: 16px;
+    border: 1px solid #EEF2F6;
+    border-radius: 4px;
+    background: #FFF;
+}
+.career-filter--wide .career-filter__panel{
+    width: 332px;
+}
+.career-filter.is-open .career-filter__panel{
+    display: flex;
+}
+.career-filter__list{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.career-filter__list li[hidden]{
+    display: none;
+}
+.career-filter__actions,
+.career-filters__actions{
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.career-filter__actions{
+    display: flex;
+}
+.career-filter__reset{
+    gap: 4px;
+    color: #151515;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+}
+.career-filter__reset img{
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+.career-filter__reset:hover{
+    color: #F7891B;
+}
+.career-filter__apply{
+    height: 40px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: #F7891B;
+}
+.career-filter__apply:hover{
+    background: #EE7700;
+}
+
+/* пункт фільтра з чекбоксом */
+.filter-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+.filter-item:hover{
+    background: #F7F9FB;
+}
+.filter-item__input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+.filter-item__name{
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    color: #151515;
+    font-size: 16px;
+    line-height: 150%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.filter-item__count{
+    flex: 0 0 auto;
+    min-width: 16px;
+    height: 16px;
+    padding: 2px 4px;
+    border-radius: 6px;
+    background: #EEF2F6;
+    color: #61656B;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+}
+.filter-item.is-disabled{
+    cursor: default;
+}
+.filter-item.is-disabled:hover{
+    background: transparent;
+}
+.filter-item.is-disabled .filter-item__name,
+.filter-item.is-disabled .filter-item__count{
+    color: #ACB3BB;
+}
+
+/* чекбокс (спільний для фільтрів і форм) */
+.checkbox{
+    position: relative;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #E1E6EB;
+    border-radius: 6px;
+    background: #FFF;
+    transition: border-color .2s ease;
+}
+.checkbox::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: #2D3239 url("../img/career/check.svg") center / 14px 14px no-repeat;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .15s ease;
+}
+input:checked + .checkbox::after{
+    opacity: 1;
+}
+input:focus-visible + .checkbox{
+    border-color: #F7891B;
+}
+label:hover > input:not(:disabled) + .checkbox{
+    border-color: #ACB3BB;
+}
+
+/* ---------- Картка вакансії ---------- */
+.vacancy-card{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    min-height: 152px;
+    padding: 24px;
+    border-radius: 4px;
+    background: #F7F9FB;
+    transition: background .2s ease;
+}
+.vacancy-card[hidden]{
+    display: none;
+}
+.vacancy-card:hover,
+.vacancy-card:focus-visible{
+    background: #EEF2F6;
+    outline: none;
+}
+.vacancy-card__main{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+.vacancy-card__head{
+    flex: 0 0 271px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 16px;
+}
+.vacancy-card__title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -0.66px;
+}
+.vacancy-card__body{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+.vacancy-card__text{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    color: #474B52;
+    font-size: 14px;
+    line-height: 150%;
+}
+.vacancy-card__more{
+    display: none;
+    align-items: center;
+    gap: 4px;
+    height: 24px;
+    padding: 2px 12px;
+    border-radius: 4px;
+    background: #2D3239;
+    color: #FFF;
+    font-size: 14px;
+    line-height: 1;
+}
+.vacancy-card__more img,
+.vacancy-card__arrow img{
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+.vacancy-card:hover .vacancy-card__more,
+.vacancy-card:focus-visible .vacancy-card__more{
+    display: inline-flex;
+}
+.vacancy-card__arrow{
+    display: none;
+    flex: 0 0 24px;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background: #2D3239;
+}
+
+/* локація (картка та сторінка вакансії) */
+.job-location{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #151515;
+    font-size: 14px;
+    line-height: 150%;
+}
+.job-location img{
+    display: block;
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+}
+.job-location--lg{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ---------- Не знайшли вакансії (форма відгуку) ---------- */
+.career-apply{
+    padding: 104px 0;
+    background: #F5F7FA;
+}
+.career-apply__inner{
+    display: flex;
+    align-items: flex-start;
+    gap: 106px;
+}
+.career-apply__aside{
+    position: sticky;
+    top: 140px;
+    flex: 0 0 483px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.career-apply__title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -2.4px;
+}
+.career-apply__text{
+    color: #61656B;
+    font-size: 14px;
+    line-height: 150%;
+}
+.career-apply .apply-form{
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 32px;
+    border-radius: 8px;
+    background: #FFF;
+}
+/* на сторінці вакансії: секція біла, форма сіра */
+.career-apply--light{
+    background: #FFF;
+}
+.career-apply--light .apply-form{
+    background: #F5F7FA;
+}
+
+/* ---------- Форма відгуку ---------- */
+.apply-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+.apply-form__body{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+.apply-form__fields{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.apply-form__side{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.apply-form__field{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.apply-form__input{
+    height: 56px;
+    padding: 4px 16px;
+    border: 1px solid #E1E6EB;
+    border-radius: 8px;
+    background: #FFF;
+    color: #151515;
+    font-size: 16px;
+    line-height: 150%;
+    transition: border-color .2s ease;
+}
+.apply-form__input::placeholder{
+    color: #878B91;
+    font-size: 16px;
+    text-overflow: ellipsis;
+}
+.apply-form__input:focus{
+    border-color: #ACB3BB;
+}
+.apply-form__field.is-invalid .apply-form__input{
+    border-color: #DC1100;
+}
+.apply-form__error{
+    display: none;
+    color: #DC1100;
+    font-size: 14px;
+    line-height: 150%;
+}
+.apply-form__field.is-invalid .apply-form__error{
+    display: block;
+}
+.apply-form__consent{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #74818B;
+    font-size: 12px;
+    line-height: 150%;
+    cursor: pointer;
+}
+.apply-form__consent .checkbox{
+    margin-top: 4px;
+}
+.apply-form__consent.is-invalid .checkbox{
+    border-color: #DC1100;
+}
+.apply-form__consent a{
+    color: #151515;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.apply-form__consent a:hover{
+    color: #F7891B;
+}
+.apply-form__submit{
+    width: 224px;
+    max-width: 100%;
+    height: 56px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background: #F7891B;
+}
+.apply-form__submit:hover{
+    background: #EE7700;
+}
+.apply-form__submit:disabled{
+    background: #EEF2F6;
+    color: #ACB3BB;
+    cursor: default;
+}
+.apply-form__status{
+    display: none;
+    margin-top: -24px;
+    color: #2F9457;
+    font-size: 14px;
+    line-height: 150%;
+}
+.apply-form__status.is-visible{
+    display: block;
+}
+
+/* завантаження резюме */
+.upload{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.upload__label{
+    color: #1C1E21;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+}
+.upload__zone{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 128px;
+    padding: 24px;
+    border: 1px dashed #ACB3BB;
+    border-radius: 8px;
+    background: #EEF2F6;
+    transition: border-color .2s ease, background .2s ease;
+}
+.upload__zone.is-dragover{
+    border-color: #F7891B;
+    background: #FFEFDB;
+}
+.upload.is-invalid .upload__zone{
+    border-color: #DC1100;
+}
+.upload__input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+.upload__empty{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 208px;
+    color: #61656B;
+    font-size: 14px;
+    line-height: 150%;
+    cursor: pointer;
+}
+.upload__empty img{
+    display: block;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+}
+.upload__link{
+    color: #151515;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.upload__empty:hover .upload__link{
+    color: #F7891B;
+}
+.upload__file{
+    display: none;
+    align-items: stretch;
+    gap: 4px;
+    max-width: 100%;
+}
+.upload.has-file .upload__empty{
+    display: none;
+}
+.upload.has-file .upload__file{
+    display: flex;
+}
+.upload__add{
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.upload__add img{
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+.upload__chip{
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 16px;
+    border-radius: 32px;
+    background: #E1E6EB;
+}
+.upload__name{
+    min-width: 0;
+    overflow: hidden;
+    color: #202222;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.upload__remove{
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+}
+.upload__remove img{
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+.upload__remove:hover{
+    opacity: .6;
+}
+.upload__hint{
+    color: #5B6771;
+    font-size: 12px;
+    line-height: 150%;
+}
+.upload.is-invalid .upload__hint{
+    color: #DC1100;
+}
+
+/* ---------- Сторінка вакансії ---------- */
+.vacancy{
+    position: relative;
+    padding: 24px 0 120px;
+    background: #F5F7FA;
+    overflow: hidden;
+}
+/* сітка ліній на весь фон секції (у макеті патерн повернутий на -90°,
+   тому ширина картинки = висота секції і навпаки) */
+.vacancy__pattern{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    container-type: size;
+    pointer-events: none;
+}
+.vacancy__pattern-img{
+    flex: 0 0 auto;
+    display: block;
+    width: 100cqh;
+    height: 100cqw;
+    max-width: none;
+    transform: rotate(-90deg);
+}
+.vacancy__top{
+    position: relative;
+}
+.vacancy__head{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 679px;
+    margin-top: 40px;
+}
+.vacancy__title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -1.2px;
+}
+.vacancy__card{
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 53px;
+    margin-top: 40px;
+    padding: 40px 98px;
+    border-radius: 4px;
+    background: #FFF;
+}
+.vacancy__content{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 40px 0;
+}
+.vacancy__lead{
+    color: #474B52;
+    font-size: 18px;
+    line-height: 150%;
+}
+.vacancy__sections{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.vacancy__section{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.vacancy__subtitle{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.54px;
+}
+.vacancy__list{
+    padding-left: 21px;
+    list-style: disc;
+    color: #474B52;
+    font-size: 14px;
+    line-height: 150%;
+}
+.vacancy__list li + li{
+    margin-top: 4px;
+}
+.vacancy__aside{
+    flex: 0 0 307px;
+    padding-left: 53px;
+    border-left: 1px solid #EEF2F6;
+}
+.vacancy__aside-inner{
+    position: sticky;
+    top: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 40px;
+}
+.vacancy__apply{
+    width: 100%;
+    height: 56px;
+    max-width: none;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background: #F7891B;
+}
+.vacancy__apply:hover{
+    background: #EE7700;
+}
+
+/* рекрутер */
+.recruiter{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.recruiter__avatar{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #F5F7FA;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+}
+.recruiter__info{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.recruiter__person{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.recruiter__role{
+    color: #61656B;
+    font-size: 12px;
+    line-height: 150%;
+}
+.recruiter__name{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.54px;
+}
+.recruiter__contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.recruiter__link{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: max-content;
+    color: #474B52;
+    font-size: 14px;
+    line-height: 150%;
+    transition: color .2s ease;
+}
+.recruiter__link img{
+    display: block;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+}
+.recruiter__link--email span{
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.recruiter__link:hover{
+    color: #F7891B;
+}
+
+/* ---------- Модальне вікно ---------- */
+.modal{
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    overflow-y: auto;
+    background: rgba(21, 21, 21, .9); /* RAROG Black, opacity 0.9 */
+}
+.modal.is-open{
+    display: flex;
+}
+.modal__dialog{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    max-width: 794px;
+    margin: auto;
+    padding: 48px;
+    border-radius: 8px;
+    background: #F5F7FA;
+}
+.modal__close{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+}
+.modal__close img{
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+.modal__close:hover{
+    opacity: .6;
+}
+.modal__head{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+}
+.modal__title{
+    color: #151515;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.66px;
+}
+.modal__text{
+    color: #474B52;
+    font-size: 14px;
+    line-height: 150%;
+}
+.modal .apply-form{
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+}
+.modal .apply-form__body{
+    flex-direction: row;
+    gap: 16px;
+}
+.modal .apply-form__fields,
+.modal .apply-form__side{
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 16px;
+}
+.modal .upload{
+    flex: 1 1 auto;
+}
+.modal .upload__zone{
+    flex: 1 1 auto;
+    min-height: 110px;
+}
+
+/* ==========================================================================
+   Кар'єра — адаптив
+   ========================================================================== */
+@media (max-width: 1280px) {
+    .career-about__text{
+        font-size: 32px;
+        letter-spacing: -1.6px;
+    }
+    .career-apply__inner{
+        gap: 48px;
+    }
+    .career-apply__aside{
+        flex-basis: 380px;
+    }
+    .career-apply__title{
+        font-size: 40px;
+        letter-spacing: -2px;
+    }
+    .vacancy__card{
+        padding: 40px 48px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .career-hero__title{
+        font-size: 64px;
+        letter-spacing: -3.2px;
+    }
+    .career-about,
+    .career-mission{
+        padding: 80px 0;
+    }
+    .career-about__text{
+        font-size: 28px;
+        letter-spacing: -1.4px;
+    }
+    .career-mission__grid{
+        flex-direction: column;
+        gap: 16px;
+    }
+    .career-mission__card{
+        flex: 0 0 auto;
+    }
+    .career-jobs{
+        padding-bottom: 80px;
+    }
+    .career-apply{
+        padding: 80px 0;
+    }
+    .career-apply__inner{
+        flex-direction: column;
+        gap: 32px;
+    }
+    .career-apply__aside{
+        position: static;
+        flex: 0 0 auto;
+    }
+    .career-apply .apply-form{
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .vacancy{
+        padding-bottom: 80px;
+    }
+    .vacancy__card{
+        flex-direction: column;
+        gap: 0;
+        padding: 24px;
+    }
+    .vacancy__content{
+        padding: 16px 0 0;
+    }
+    .vacancy__aside{
+        flex: 0 0 auto;
+        padding-left: 0;
+        border-left: none;
+    }
+    .vacancy__aside-inner{
+        position: static;
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hero */
+    .career-hero{
+        padding-bottom: 24px;
+    }
+    .career-hero__fade{
+        height: 253px;
+    }
+    .career-hero__title{
+        max-width: 343px;
+        font-size: 56px;
+        letter-spacing: -2.8px;
+    }
+
+    /* Про компанію */
+    .career-about{
+        padding: 64px 8px;
+    }
+    .career-about__inner{
+        gap: 16px;
+    }
+    .career-about .name{
+        font-size: 18px;
+        letter-spacing: -0.9px;
+    }
+    .career-about__text{
+        font-size: 22px;
+        letter-spacing: -1.1px;
+    }
+
+    /* Місія */
+    .career-mission{
+        padding: 64px 8px;
+    }
+    .career-mission__card{
+        gap: 16px;
+    }
+    .career-mission__card--dark{
+        min-height: 0;
+        padding: 24px;
+    }
+    .career-mission__card--photo{
+        padding: 0 24px 24px;
+    }
+    .career-mission__fade{
+        height: 221px;
+    }
+    .career-mission__accent{
+        font-size: 18px;
+        letter-spacing: -0.9px;
+    }
+
+    /* Вакансії */
+    .career-jobs{
+        padding-bottom: 64px;
+    }
+    .career-jobs--page{
+        padding-top: 24px;
+    }
+    .career-jobs__head{
+        gap: 16px;
+    }
+    .career-jobs__title{
+        font-size: 26px;
+        letter-spacing: -0.78px;
+    }
+    .career-jobs__list{
+        gap: 16px;
+        margin-top: 24px;
+    }
+    .career-jobs__empty{
+        padding-top: 64px;
+    }
+    .career-jobs__empty-title{
+        font-size: 22px;
+        letter-spacing: -0.66px;
+    }
+    .career-toolbar__filters-btn{
+        display: inline-flex;
+    }
+
+    /* Фільтри — повноекранна панель */
+    .career-filters{
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 16px 16px 112px;
+        overflow-y: auto;
+        background: #FFF;
+    }
+    .career-filters.is-open{
+        display: flex;
+    }
+    .career-filters__close{
+        display: flex;
+        align-self: flex-end;
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        margin-bottom: -8px;
+    }
+    .career-filters__close img{
+        display: block;
+        width: 24px;
+        height: 24px;
+    }
+    .career-filter__toggle{
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 1px solid #E1E6EB;
+        border-radius: 0;
+        background: transparent;
+    }
+    .career-filter__toggle:hover{
+        background: transparent;
+    }
+    .career-filter__panel,
+    .career-filter--wide .career-filter__panel{
+        position: static;
+        gap: 16px;
+        width: auto;
+        padding: 16px 0 0;
+        border: none;
+    }
+    .career-filter__actions{
+        display: none;
+    }
+    .career-filters__actions{
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        padding: 8px 16px 40px;
+        border-top: 1px solid #E1E6EB;
+        background: #FFF;
+    }
+
+    /* Картка вакансії */
+    .vacancy-card{
+        gap: 16px;
+        min-height: 0;
+        padding: 16px;
+    }
+    .vacancy-card__main{
+        flex: 1 1 0;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .vacancy-card__head{
+        flex: 0 0 auto;
+        padding-right: 0;
+    }
+    .vacancy-card__text{
+        -webkit-line-clamp: 2;
+    }
+    .vacancy-card__more,
+    .vacancy-card:hover .vacancy-card__more,
+    .vacancy-card:focus-visible .vacancy-card__more{
+        display: none;
+    }
+    .vacancy-card__arrow{
+        display: flex;
+    }
+
+    /* Форма відгуку */
+    .career-apply{
+        padding: 64px 0;
+    }
+    .career-apply__title{
+        font-size: 32px;
+        letter-spacing: -1.6px;
+    }
+    .career-apply .apply-form{
+        padding: 16px;
+    }
+    .career-apply--light .apply-form{
+        background: #FFF;
+    }
+    .apply-form__submit{
+        width: 100%;
+    }
+
+    /* Сторінка вакансії */
+    .vacancy{
+        padding-bottom: 64px;
+    }
+    .vacancy__top{
+        padding: 0 8px;
+    }
+    .vacancy__head{
+        margin-top: 24px;
+    }
+    .vacancy__title{
+        font-size: 26px;
+        letter-spacing: -0.78px;
+    }
+    .vacancy__card{
+        margin-top: 24px;
+        padding: 24px 16px;
+    }
+    .vacancy__content{
+        gap: 24px;
+        padding: 0;
+    }
+    .vacancy__aside-inner{
+        max-width: none;
+    }
+
+    /* Модальне вікно — на весь екран */
+    .modal{
+        padding: 0;
+    }
+    .modal__dialog{
+        gap: 24px;
+        min-height: 100%;
+        margin: 0;
+        padding: 56px 16px 40px;
+        border-radius: 0;
+    }
+    .modal__close{
+        top: 24px;
+        right: 24px;
+    }
+    .modal__head{
+        gap: 8px;
+        padding: 0 24px;
+    }
+    .modal .apply-form{
+        gap: 24px;
+    }
+    .modal .apply-form__body{
+        flex-direction: column;
+        gap: 24px;
+    }
+    .modal .upload__zone{
+        min-height: 110px;
+    }
+}
